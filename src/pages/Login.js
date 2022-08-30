@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import propTypes from 'prop-types';
 import { addEmail } from '../redux/actions';
 
 class Login extends React.Component {
@@ -69,5 +70,12 @@ class Login extends React.Component {
     );
   }
 }
+
+Login.propTypes = {
+  history: propTypes.shape({
+    push: propTypes.func,
+  }).isRequired,
+  dispatch: propTypes.func.isRequired,
+};
 
 export default connect()(Login);
