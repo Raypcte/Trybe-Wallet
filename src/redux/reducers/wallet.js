@@ -1,4 +1,4 @@
-import { SALVAR_MOEDAS } from '../actions';
+import { SALVAR_MOEDAS, ADICIONAR_DESPESA } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -15,6 +15,12 @@ const walletReducer = (state = INITIAL_STATE, action) => {
       currencies: Object.keys(action.moedas)
         .filter((moeda) => moeda !== 'USDT'),
     };
+  case ADICIONAR_DESPESA:
+    return {
+      ...state,
+      expenses: [...state.expenses, action.despesa],
+    };
+
   default:
     return state;
   }
