@@ -11,7 +11,7 @@ describe('tela do login', () => {
     const campoEmail = screen.getByRole('textbox', { name: /e-mail/i });
 
     expect(campoEmail).toBeInTheDocument();
-    userEvent.type(campoEmail, 'alguemk@gmail.com');
+    userEvent.type(campoEmail, 'alguem@gmail.com');
 
     expect(campoEmail).toHaveValue('alguem@gmail.com');
   });

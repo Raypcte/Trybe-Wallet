@@ -5,7 +5,7 @@ import { pegarMoedas, adicionarDespesa } from '../redux/actions';
 
 class WalletForm extends Component {
   state = {
-    value: 0,
+    value: '',
     description: '',
     currency: 'USD',
     method: 'Dinheiro',
@@ -22,7 +22,7 @@ class WalletForm extends Component {
   adicionar = async () => {
     const { dispatch } = this.props;
     const moedinha = await dispatch(pegarMoedas());
-    console.log(moedinha);
+    // console.log(moedinha);
     this.setState({
       exchangeRates: moedinha,
     }, async () => {
