@@ -28,17 +28,17 @@ class Table extends Component {
                 <td>{despesa.description}</td>
                 <td>{despesa.tag}</td>
                 <td>{despesa.method}</td>
-                <td>{despesa.value}</td>
+                <td>{Number(despesa.value).toFixed(2)}</td>
+                <td>{despesa.exchangeRates[despesa.currency].name}</td>
                 <td>
-                  {Math.round(
-                    +(despesa.exchangeRates[despesa.currency].ask) * 100,
-                  ) / 100}
+                  {Number(despesa.exchangeRates[despesa.currency].ask)
+                    .toFixed(2)}
                 </td>
                 <td>
-                  {(+despesa.exchangeRates[despesa.currency].ask
-                  * +despesa.value).toFixed(2)}
+                  {(Number(despesa.exchangeRates[despesa.currency].ask)
+                    * Number(despesa.value)).toFixed(2)}
                 </td>
-                <td>{despesa.currency}</td>
+                <td>Real</td>
                 <td>{}</td>
               </tr>
             ))
